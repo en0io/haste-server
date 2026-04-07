@@ -177,6 +177,28 @@ fastify.post<{ Body: SwaggerTypes.PostBodyType; Reply: SwaggerTypes.CreatedDocum
 	}
 );
 
+fastify.get('/meta/healthcheck', {
+	schema: {
+		description: 'Returns the current unix time of the sever, for tracking health behind cache proxies',
+		tags: ['GET'],
+		response: {
+			200: {
+				description: 'Healthcheck response with current unix time',
+				type: 'object'
+				properties: {
+					status: { type: 'string' },
+					timestamp: { type: 'integer' }
+				}
+			}
+		}
+	}
+}, (_, reply) => {
+	return reply.status(200).send({
+		status: 'ok',
+		timestamp: Math.floor(Date.now() / 1000)
+	});
+});
+
 // Otherwise, try to match static files
 await fastify.register(import('@fastify/static'), {
 	root: new URL('dist/frontend/', rootDir),
