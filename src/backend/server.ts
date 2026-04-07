@@ -184,7 +184,7 @@ fastify.get('/meta/healthcheck', {
 		response: {
 			200: {
 				description: 'Healthcheck response with current unix time',
-				type: 'object'
+				type: 'object',
 				properties: {
 					status: { type: 'string' },
 					timestamp: { type: 'integer' }
