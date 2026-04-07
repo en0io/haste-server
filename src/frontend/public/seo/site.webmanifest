@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json.schemastore.org/web-manifest",
 	"background_color": "#282C34",
-	"categories": ["haste", "bin", "skyra", "hastebin", "paste", "pastebin"],
+	"categories": ["haste", "bin", "hastebin", "paste", "pastebin"],
 	"description": "Hastebin variant that actually works",
 	"dir": "auto",
 	"display": "minimal-ui",
