@@ -10,10 +10,22 @@ import * as SwaggerTypes from './lib/swaggerTypes.js';
 import type { FastifyRequestGeneric } from './lib/types.js';
 
 // Use dynamic imports to ensure only one of the stores gets loaded
-const preferredStore =
-	config.storage.type === 'file'
-		? new (await import('./stores/FileDocumentStore.js')).FileDocumentStore(config.storage)
-		: new (await import('./stores/RedisDocumentStore.js')).RedisDocumentStore(config.storage);
+const preferredStore = await (async () => {
+	switch (config.storage.type) {
+		case 'file': {
+			const { FileDocumentStore } = await import('./stores/FileDocumentStore.js');
+			return new FileDocumentStore(config.storage);
+		}
+		case 's3': {
+			const { S3DocumentStore } = await import('./stores/S3DocumentStore.js');
+			return new S3DocumentStore(config.storage);
+		}
+		case 'redis': {
+			const { RedisDocumentStore } = await import('./stores/RedisDocumentStore.js');
+			return new RedisDocumentStore(config.storage);
+		}
+	}
+})();
 
 // Load all static documents
 for (const [name, path] of Object.entries(config.documents)) {
@@ -177,27 +189,31 @@ fastify.post<{ Body: SwaggerTypes.PostBodyType; Reply: SwaggerTypes.CreatedDocum
 	}
 );
 
-fastify.get('/meta/healthcheck', {
-	schema: {
-		description: 'Returns the current unix time of the sever, for tracking health behind cache proxies',
-		tags: ['GET'],
-		response: {
-			200: {
-				description: 'Healthcheck response with current unix time',
-				type: 'object',
-				properties: {
-					status: { type: 'string' },
-					timestamp: { type: 'integer' }
+fastify.get(
+	'/meta/healthcheck',
+	{
+		schema: {
+			description: 'Returns the current unix time of the sever, for tracking health behind cache proxies',
+			tags: ['GET'],
+			response: {
+				200: {
+					description: 'Healthcheck response with current unix time',
+					type: 'object',
+					properties: {
+						status: { type: 'string' },
+						timestamp: { type: 'integer' }
+					}
 				}
 			}
 		}
+	},
+	(_, reply) => {
+		return reply.status(200).send({
+			status: 'ok',
+			timestamp: Math.floor(Date.now() / 1000)
+		});
 	}
-}, (_, reply) => {
-	return reply.status(200).send({
-		status: 'ok',
-		timestamp: Math.floor(Date.now() / 1000)
-	});
-});
+);
 
 // Otherwise, try to match static files
 await fastify.register(import('@fastify/static'), {

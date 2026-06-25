@@ -47,7 +47,7 @@ interface RateLimitsConfig {
 /** The storage options */
 interface StorageConfig {
 	/** The type of storage ot use */
-	type: 'file' | 'redis';
+	type: 'file' | 'redis' | 's3';
 	/** The host of the storage, only used if {@link StorageConfig.type type} is `redis` */
 	host?: string;
 	/** The port of the storage, only used if {@link StorageConfig.type type} is `redis` */
@@ -58,8 +58,23 @@ interface StorageConfig {
 	db?: number;
 	/** The redis password, only used if {@link StorageConfig.type type} is `redis` */
 	password?: string;
-	/** The local file path where documents are stored, only used if {@link StorageConfig.type type} is `file` */
+	/**
+	 * The local file path where documents are stored, only used if {@link StorageConfig.type type} is `file`.
+	 * Also used as an optional key prefix within the bucket if {@link StorageConfig.type type} is `s3`.
+	 */
 	path?: string;
+	/** The S3 bucket name where documents are stored, only used if {@link StorageConfig.type type} is `s3` */
+	bucket?: string;
+	/** The S3 bucket region, only used if {@link StorageConfig.type type} is `s3` */
+	region?: string;
+	/** A custom S3-compatible endpoint (e.g. R2, MinIO), only used if {@link StorageConfig.type type} is `s3` */
+	endpoint?: string;
+	/** Whether to use path-style addressing, only used if {@link StorageConfig.type type} is `s3` */
+	forcePathStyle?: boolean;
+	/** The S3 access key id, only used if {@link StorageConfig.type type} is `s3` */
+	accessKeyId?: string;
+	/** The S3 secret access key, only used if {@link StorageConfig.type type} is `s3` */
+	secretAccessKey?: string;
 }
 
 /**
@@ -92,12 +107,18 @@ declare module '@skyra/env-utilities' {
 		MAX_LENGTH: IntegerString;
 		RATE_LIMIT_MAX: IntegerString;
 		RATE_LIMIT_TIME_WINDOW: IntegerString;
-		STORAGE_TYPE: 'file' | 'redis';
+		STORAGE_TYPE: 'file' | 'redis' | 's3';
 		STORAGE_HOST: string;
 		STORAGE_PATH: string;
 		STORAGE_PORT: IntegerString;
 		STORAGE_EXPIRE_SECONDS: IntegerString;
 		STORAGE_DB: IntegerString;
 		STORAGE_PASSWORD: string;
+		STORAGE_BUCKET: string;
+		STORAGE_REGION: string;
+		STORAGE_ENDPOINT: string;
+		STORAGE_FORCE_PATH_STYLE: string;
+		STORAGE_ACCESS_KEY_ID: string;
+		STORAGE_SECRET_ACCESS_KEY: string;
 	}
 }

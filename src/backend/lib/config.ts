@@ -26,7 +26,13 @@ export const config: Config = {
 		port: envParseInteger('STORAGE_PORT', 6379),
 		expire: envParseInteger('STORAGE_EXPIRE_SECONDS', null) ?? undefined,
 		db: envParseInteger('STORAGE_DB', 0),
-		password: envParseString('STORAGE_PASSWORD', null) ?? undefined
+		password: envParseString('STORAGE_PASSWORD', null) ?? undefined,
+		bucket: envParseString('STORAGE_BUCKET', null) ?? undefined,
+		region: envParseString('STORAGE_REGION', 'us-west-2'),
+		endpoint: envParseString('STORAGE_ENDPOINT', null) ?? undefined,
+		forcePathStyle: envParseString('STORAGE_FORCE_PATH_STYLE', null) === 'true',
+		accessKeyId: envParseString('STORAGE_ACCESS_KEY_ID', null) ?? undefined,
+		secretAccessKey: envParseString('STORAGE_SECRET_ACCESS_KEY', null) ?? undefined
 	},
 
 	documents: {
