@@ -36,6 +36,6 @@ export const config: Config = {
 	},
 
 	documents: {
-		about: fileURLToPath(new URL('README.md', rootDir))
+		repoabout: fileURLToPath(new URL('README.md', rootDir))
 	}
 };
