@@ -1,7 +1,7 @@
 {
-	"name": "@skyra/haste-server",
+	"name": "en0-Haste-Server",
 	"version": "1.0.0",
-	"description": "Private Haste Server",
+	"description": "en0.sh Haste Server",
 	"private": true,
 	"main": "dist/backend/server.js",
 	"type": "module",
