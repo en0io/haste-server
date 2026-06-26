@@ -1,6 +1,10 @@
 default:
   before_script:
     - docker info
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
 build_image:
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
-    - docker build -t en0-haste-server .
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
