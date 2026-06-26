@@ -1,21 +1,19 @@
+variables:
+  IMAGE_SHA: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+  IMAGE_LATEST: "$CI_REGISTRY_IMAGE:latest"
+
 default:
   before_script:
     - docker info
-    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
-build_image:
-  stage: build
-  variables:
-    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  script:
-    - echo $IMAGE_TAG
-    - docker build -t $IMAGE_TAG .
+    - echo "$CI_REGISTRY_PASSWORD" | docker login "$CI_REGISTRY" -u "$CI_REGISTRY_USER" --password-stdin
 
-deploy_image:
-  stage: deploy
-  variables:
-    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+build_and_push:
+  stage: build
   script:
-    - docker push $IMAGE_TAG
+    - docker build -t "$IMAGE_SHA" .
+    - docker tag "$IMAGE_SHA" "$IMAGE_LATEST"
+    - docker push "$IMAGE_SHA"
+    - docker push "$IMAGE_LATEST"
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_COMMIT_BRANCH == "main"'
   environment: production
