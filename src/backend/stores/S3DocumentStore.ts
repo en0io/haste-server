@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { GetObjectCommand, PutObjectCommand, S3Client, type S3ClientConfig } from '@aws-sdk/client-s3';
+import { GetObjectCommand, PutObjectCommand, HeadObjectCommand, S3Client, type S3ClientConfig } from '@aws-sdk/client-s3';
 import type { Config } from '../lib/types.js';
 import { BaseDocumentStore } from './BaseDocumentStore.js';
 
@@ -73,8 +73,18 @@ export class S3DocumentStore extends BaseDocumentStore {
 	 * @returns A Promise that resolves to true if the document was successfully stored, or false otherwise.
 	 */
 	public override async set(key: string, data: string | Buffer): Promise<boolean> {
+		const objectKey = this.objectKey(key);
+
 		try {
-			const command = new PutObjectCommand({ Bucket: this.#bucket, Key: this.objectKey(key), Body: data });
+			await this.#client.send(new HeadObjectCommand({ Bucket: this.#bucket, Key: objectKey }));
+			// if this succeeds, the file already exists, and we should stop
+			return false;
+		} catch {
+			// file key isn't in use
+		}
+		// upload it to the S3 cluster
+		try {
+			const command = new PutObjectCommand({ Bucket: this.#bucket, Key: objectKey, Body: data });
 			await this.#client.send(command);
 			return true;
 		} catch {
