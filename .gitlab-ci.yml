@@ -12,6 +12,8 @@ build_image:
 
 deploy_image:
   stage: deploy
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
     - docker push $IMAGE_TAG
   rules:
