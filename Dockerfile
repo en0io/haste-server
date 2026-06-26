@@ -12,6 +12,7 @@ COPY --chown=node:node yarn.lock .
 COPY --chown=node:node package.json .
 COPY --chown=node:node .yarnrc.yml .
 COPY --chown=node:node README.md .
+COPY --chown=node:node ABOUT.md .
 COPY --chown=node:node .yarn/ .yarn/
 
 ENTRYPOINT ["dumb-init", "--"]
