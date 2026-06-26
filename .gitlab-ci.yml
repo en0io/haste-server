@@ -7,13 +7,18 @@ default:
     - docker info
     - echo "$CI_REGISTRY_PASSWORD" | docker login "$CI_REGISTRY" -u "$CI_REGISTRY_USER" --password-stdin
 
-build_and_push:
+build_image:
   stage: build
   script:
+    # Always verify the image builds
     - docker build -t "$IMAGE_SHA" .
-    - docker tag "$IMAGE_SHA" "$IMAGE_LATEST"
-    - docker push "$IMAGE_SHA"
-    - docker push "$IMAGE_LATEST"
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-  environment: production
+
+    # Only publish from main
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        docker tag "$IMAGE_SHA" "$IMAGE_LATEST"
+        docker push "$IMAGE_SHA"
+        docker push "$IMAGE_LATEST"
+      else
+        echo "Not on main; skipping image push."
+      fi
