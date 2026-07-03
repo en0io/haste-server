@@ -8,6 +8,21 @@ official [haste-server](https://github.com/seejohnrun/haste-server) and we thank
 
 This fork adds S3 as a potential backend, as well as flat file.
 
+## Server Set-up
+
+**Requirements:**
+
+- A Docker host
+- A supported paste storage configuration
+    - Redis/Valkey
+    - Flat file
+    - S3-compatible object storage provider
+
+We do not utilize, and cannot provide support for Redis/Valkey environments.
+
+Examples for both a flat-file storage and S3 configuration can be found in `docker-compose.flatfile.example.yml` and
+`docker-compose.s3.example.yml` respectively
+
 ## Contributing
 
 This repository is _not_ mastered in GitHub, and changes are sycned from an external platform. Please submit any PRs as

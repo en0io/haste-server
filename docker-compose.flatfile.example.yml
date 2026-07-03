@@ -1,0 +1,15 @@
+services:
+  haste:
+    container_name: haste
+    image: your-container-repository-here
+    restart: unless-stopped
+    ports:
+      - 8290:8290
+    environment:
+      PORT: 8290
+      HOST: 0.0.0.0
+      STORAGE_BUCKET: hastebin
+      STORAGE_TYPE: file
+      STORAGE_PATH: /usr/src/app/data
+    volumes:
+      - ./data:/usr/src/app/data
