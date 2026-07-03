@@ -1,0 +1,18 @@
+services:
+  haste:
+    container_name: haste
+    image: your-container-repository-here
+    restart: unless-stopped
+    ports:
+      - 8290:8290
+    environment:
+      PORT: 8290
+      HOST: 0.0.0.0
+      STORAGE_TYPE: s3
+      STORAGE_BUCKET: hastebin
+      STORAGE_REGION: us-west-2
+      STORAGE_PATH: documents
+      STORAGE_ENDPOINT: http://your-minio-instance-here
+      STORAGE_FORCE_PATH_STYLE: true
+      STORAGE_ACCESS_KEY_ID:
+      STORAGE_SECRET_ACCESS_KEY:
