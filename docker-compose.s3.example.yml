@@ -1,7 +1,7 @@
 services:
   haste:
     container_name: haste
-    image: your-container-repository-here
+    image: ghcr.io/en0io/haste-server:latest
     restart: unless-stopped
     ports:
       - 8290:8290
