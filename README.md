@@ -7,13 +7,6 @@ official [haste-server](https://github.com/seejohnrun/haste-server) and we thank
 
 This fork adds S3 as a potential backend, as well as flat file.
 
-## API Documentation
-
-We have published a Swagger UI for the API, you can access it by visiting
-[`/swagger-ui`](https://hastebin.skyra.pw/swagger-ui) on the server. If you are
-running this locally, you can access it by visiting
-`http://localhost:8290/swagger-ui`.
-
 ## Usage
 
 ### From the [website]
@@ -44,7 +37,7 @@ For this to run, your system needs:
 
 ```sh
 haste() {
- curl -X POST -s -d "$(cat)" https://hastebin.skyra.pw/documents | jq --raw-output '.key' | { read key; echo "https://hastebin.skyra.pw/${key}"; }
+ curl -X POST -s -d "$(cat)" https://en0.sh/documents | jq --raw-output '.key' | { read key; echo "https://en0.sh/${key}"; }
 }
 ```
 
@@ -52,7 +45,7 @@ haste() {
 
 ```sh
 cat something | haste
-# https://hastebin.skyra.pw/1238193
+# https://en0.sh/ebilusucop
 ```
 
 You can even take this a step further, and cut out the last step of copying the
@@ -89,10 +82,10 @@ this script to work
 ```ps1
 Function haste {
   $fileContent = Get-Content -Path $args[0] -Encoding UTF8 -Raw
-  $response = Invoke-RestMethod -Uri https://hastebin.skyra.pw/documents -Method POST -ContentType 'text/plain; charset=utf-8' -Body $fileContent
+  $response = Invoke-RestMethod -Uri https://en0.sh/documents -Method POST -ContentType 'text/plain; charset=utf-8' -Body $fileContent
   $key = $response.key
 
-  Write-Host https://hastebin.skyra.pw/$key
+  Write-Host https://en0.sh/$key
 }
 ```
 
@@ -100,6 +93,6 @@ Function haste {
 
 ```ps1
 haste .\path\to\file
-# https://hastebin.skyra.pw/1238193
+# https://en0.sh/ebilusucop
 ```
 

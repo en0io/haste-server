@@ -29,7 +29,7 @@ Additionally, we reserve the right to remove any paste at any time.
 Hastebin was originally written by John Crepezzi <john.crepezzi@gmail.com>, and this instance runs a fork of the version
 maintained by the folks at the Skyra Project (https://github.com/skyra-project/haste-server).
 
-This instance is hosted by en0.
+This instance is hosted by en0.io
 https://en0.io/
 
 Key Design by Brian Dawson <bridawson@gmail.com>
