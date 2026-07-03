@@ -2,10 +2,16 @@
 
 This repo holds the source code used to provide a reliable, self-controlled and
 self-hosted Haste server. We forked the [Skyra Project](https://github.com/skyra-project/haste-server) haste server due
-to apparent abandonment and unsuitability in our environment. Which was forked from the awesome work that [John Crepezzi](https://github.com/seejohnrun) has put in the
+to apparent abandonment and unsuitability in our environment. Which was forked from the awesome work
+that [John Crepezzi](https://github.com/seejohnrun) has put in the
 official [haste-server](https://github.com/seejohnrun/haste-server) and we thank him greatly for that.
 
 This fork adds S3 as a potential backend, as well as flat file.
+
+## Contributing
+
+This repository is _not_ mastered in GitHub, and changes are sycned from an external platform. Please submit any PRs as
+a patch file.
 
 ## Usage
 
