@@ -22,12 +22,13 @@ please email contact@en0.io.
 
 en0.sh is not to be used for any illegal purposes, or for spam/harassment.
 If you believe you have come across a paste violating our terms of service, please email abuse@en0.io.
-Additionally, we reserve the right to remove any paste at any time.
+
+Additionally, we reserve the right to remove any paste at any time and deny 
 
 ## Author
 
-Hastebin was originally written by John Crepezzi <john.crepezzi@gmail.com>, and this instance runs a fork of the version
-maintained by the folks at the Skyra Project (https://github.com/skyra-project/haste-server).
+Hastebin was originally written by John Crepezzi <john.crepezzi@gmail.com>.
+Much of our fork is derived from the Skyra Project's rewrite (https://github.com/skyra-project/haste-server).
 
 This instance is hosted by en0.io
 https://en0.io/

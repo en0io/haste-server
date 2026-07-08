@@ -83,7 +83,7 @@ await fastify.register(import('@fastify/sensible'));
 await fastify.register(import('@fastify/swagger'), {
 	swagger: {
 		info: {
-			title: 'Skyra Hastebin',
+			title: 'Hastebin',
 			description: 'A Hastebin by developers for developers',
 			// Inject the version with esbuild
 			version: '[VI]{{inject}}[/VI]'
