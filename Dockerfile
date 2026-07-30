@@ -8,12 +8,16 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache dumb-init g++ make python3
 
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT="0"
+
 COPY --chown=node:node yarn.lock .
 COPY --chown=node:node package.json .
 COPY --chown=node:node .yarnrc.yml .
 COPY --chown=node:node README.md .
 COPY --chown=node:node ABOUT.md .
-COPY --chown=node:node .yarn/ .yarn/
+
+# Yarn comes from the "packageManager" field in package.json, via Corepack
+RUN corepack enable && corepack install
 
 ENTRYPOINT ["dumb-init", "--"]
 
