@@ -1,0 +1,4 @@
+Contact: mailto:security@en0.sh
+Expires: 2030-01-01T00:00
+Preferred-Languages: en, fr, nl
+Canonical: https://en0.sh/.well-known/security.txt
