@@ -1,19 +1,37 @@
 ## What is this repo?
 
-This repo holds the source code used to provide a reliable, self-controlled and
-self-hosted Haste server. We forked the [Skyra Project](https://github.com/skyra-project/haste-server) haste server due
-to apparent abandonment and unsuitability in our environment. Which was forked from the awesome work
-that [John Crepezzi](https://github.com/seejohnrun) has put in the
-official [haste-server](https://github.com/seejohnrun/haste-server) and we thank him greatly for that.
+This repo holds the source code used to provide a reliable, self-controlled and self-hosted Haste server, as can be seen
+running at [en0.sh](https://en0.sh).
+We forked the [Skyra Project](https://github.com/skyra-project/haste-server) haste server due
+to apparent abandonment in early 2025.
 
-This fork adds S3 as a potential backend, as well as flat file.
+The Skyra Project fork is itself a TypeScript re-write of [John Crepezzi](https://github.com/seejohnrun)'s original
+haste-server.
+
+Thank you to all of the previous developers who have worked on Hastebin and its previous forks.
+
+Our fork adds new backends (including S3 and flat file), and automatic light/dark mode based on system
+preferences.
+
+### Roadmap
+
+- Healthcheck improvements (new)
+- Postgres backend support (backport)
+- Phonetic and random key generation (backport)
+- MySQL + MariaDB backend support (new)
+- Phrase-based key generation (new)
+- User-definable retention times (new)
+
+We do not have plans to backport support for Memcached, RethinkDB, MongoDB, or Google Datastore at this time, though we
+welcome
+community-submitted datastore additions.
 
 ## Server Set-up
 
 **Requirements:**
 
 - A Docker host
-- A supported paste storage configuration
+- A supported storage configuration
     - Redis/Valkey
     - Flat file
     - S3-compatible object storage provider
@@ -23,10 +41,17 @@ We do not utilize, and cannot provide support for Redis/Valkey environments.
 Examples for both a flat-file storage and S3 configuration can be found in `docker-compose.flatfile.example.yml` and
 `docker-compose.s3.example.yml` respectively
 
+## API Documentation
+
+When Haste-Server is running, Swagger UI is available at `/swagger-ui`. 
+
+This is not available on our hosted instance, as we have disabled it to
+minimize external surface.
+
 ## Contributing
 
-This repository is _not_ mastered in GitHub, and changes are sycned from an external platform. Please submit any PRs as
-a patch file.
+This repository is _not_ maintained directly in GitHub, and changes are sycned from an external platform. Any submitted PRs will be
+applied as a git patch, and be synced back to GitHub.
 
 ## Usage
 
