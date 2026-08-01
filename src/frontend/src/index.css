@@ -1,3 +1,5 @@
+@import 'highlight.js/styles/atom-one-light.css' (prefers-color-scheme: light);
+
 /* fira-code - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -30,7 +32,33 @@
     Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    --dark-black: #141512;
+    /* Let the browser theme scrollbars, carets and form controls to match */
+    color-scheme: light dark;
+
+    /* Document surface, dark by default. Light values track atom-one-light's palette */
+    --page-bg: #282c34;
+    --page-text: #fff;
+    --linenos: #7d7d7d;
+
+    /* The key widget (logo, buttons, tooltip) */
+    --chrome-bg: #141512;
+    --chrome-text: #fff;
+    --chrome-shortcut: #c4dce3;
+
+    --icon-filter: none;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --page-bg: #fafafa;
+        --page-text: #383a42;
+        --linenos: #9d9da2;
+
+        --chrome-bg: #e9e9eb;
+        --chrome-text: #141512;
+        --chrome-shortcut: #35707e;
+        --icon-filter: invert(1) hue-rotate(180deg);
+    }
 }
 
 html {
@@ -38,7 +66,7 @@ html {
 }
 
 body {
-    background: #282c34;
+    background: var(--page-bg);
     padding: 20px 50px;
     margin: 0px;
     height: 100%;
@@ -50,7 +78,7 @@ body {
 textarea {
     background: transparent;
     border: 0px;
-    color: #fff;
+    color: var(--page-text);
     padding: 0px;
     width: 100%;
     height: 100%;
@@ -65,7 +93,7 @@ textarea {
 /* the line numbers */
 
 #linenos {
-    color: #7d7d7d;
+    color: var(--linenos);
     position: absolute;
     top: 20px;
     left: 0px;
@@ -110,11 +138,11 @@ pre {
 #box1 {
     padding: 5px;
     text-align: center;
-    background: var(--dark-black);
+    background: var(--chrome-bg);
 }
 
 #box2 {
-    background: var(--dark-black);
+    background: var(--chrome-bg);
     font-size: 0px;
     padding: 0px 5px;
     display: flex;
@@ -141,6 +169,7 @@ pre {
     height: 37px;
     display: inline-block;
     position: relative;
+    filter: var(--icon-filter);
 }
 
 #box2 .link embed {
@@ -153,7 +182,7 @@ pre {
 }
 
 #box3 {
-    background: var(--dark-black);
+    background: var(--chrome-bg);
     font-family: Helvetica, sans-serif;
     font-size: 12px;
     line-height: 14px;
@@ -162,12 +191,12 @@ pre {
 }
 
 #box3 .label {
-    color: #fff;
+    color: var(--chrome-text);
     font-weight: bold;
 }
 
 #box3 .shortcut {
-    color: #c4dce3;
+    color: var(--chrome-shortcut);
     font-weight: normal;
 }
 
