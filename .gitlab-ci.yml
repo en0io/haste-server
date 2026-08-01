@@ -11,7 +11,7 @@ build_image:
   stage: build
   script:
     # Always verify the image builds
-    - docker build --no-cache -t "$IMAGE_SHA" .
+    - docker build --no-cache --provenance=false --sbom=false -t "$IMAGE_SHA" .
 
     # Only publish from main
     - |
