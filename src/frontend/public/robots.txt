@@ -1,4 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 Sitemap: https://en0.sh/sitemap.xml
 User-agent: *
-Disallow:
+Disallow: /documents/
+Disallow: /raw/
