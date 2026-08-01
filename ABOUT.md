@@ -22,7 +22,7 @@ If you believe you have come across a paste violating our terms of service, plea
 en0.sh is not to be used for any purposes illegal in the United States, including but not limited to:
 
  - malware distribution
- - dissemination of personally identifiable information
+ - nonconsensual dissemination of personally identifiable information
  - harassment
 
 We reserve the right to remove any paste at any time for any reason, and limit or deny access to Hastebin to anyone at
@@ -40,5 +40,5 @@ The TypeScript port, which underpins most of this fork, was done by The Skyra Pr
  - Han Chen
  - Sean Outram
 
-Current development of this fork is done by Alyx Wijers, as part of the en0 Project, which has been hosting Hastebin since 2019.
-https://en0.io
+This fork and instance is maintained part of the en0 Project (https://en0.io), which has been hosting an instance since 2019.
+http://github.com/en0io/haste-server/
