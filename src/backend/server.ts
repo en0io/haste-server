@@ -225,9 +225,21 @@ await fastify.register(import('@fastify/static'), {
 	wildcard: false
 });
 
+// The statically configured documents are our own content, so they stay indexable.
+// They are served as markdown, which is the extension the frontend routes them under.
+// These are configured in src/backend/lib/config.ts
+const indexablePaths = new Set(Object.keys(config.documents).map((name) => `/${name}.md`));
+
 // Then we can loop back with a wildcard route, everything else should be a token,
-// so route it back to sending index.html
-fastify.get('*', { schema: { hide: true } }, (_, reply) => {
+// so route it back to sending index.html.
+//
+// Anything that is not one of our own documents is either a user submitted document
+// or a bad route, so keep it out of search results. The homepage is served by the
+// static handler above and stays indexable.
+fastify.get('*', { schema: { hide: true } }, (request, reply) => {
+	if (!indexablePaths.has(request.url)) {
+		reply.header('X-Robots-Tag', 'noindex, follow');
+	}
 	return reply.sendFile('index.html');
 });
 

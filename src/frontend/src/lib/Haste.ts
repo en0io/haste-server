@@ -100,6 +100,24 @@ export class Haste {
 		['xml', 'xml']
 	]);
 
+	/**
+	 * The description index.html ships with, used for every page without one of its own
+	 */
+	private defaultDescription = document.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? '';
+
+	/**
+	 * Descriptions for the documents that are indexable.
+	 *
+	 * @remark User submitted documents are served with a noindex header, so they
+	 * are deliberately absent and fall back to {@link defaultDescription}.
+	 */
+	private descriptionsMap = new Map([
+		[
+			'/about.md',
+			'About Hastebin'
+		]
+	]);
+
 	public constructor(appName: string) {
 		this.appName = appName;
 
@@ -125,6 +143,7 @@ export class Haste {
 		this.doc = new HasteDocument();
 
 		this.setTitle();
+		this.setPageMetadata('/');
 		this.setButtonsEnabled(true);
 		this.textArea.value = '';
 		this.textArea.style.display = '';
@@ -147,6 +166,7 @@ export class Haste {
 			const ret = await this.doc.load(parts[0], this.lookupTypeByExtension(parts[1]));
 			this.code.innerHTML = ret.value;
 			this.setTitle(ret.key);
+			this.setPageMetadata(`/${url}`);
 			this.setButtonsEnabled(false);
 			this.textArea.value = '';
 			this.textArea.style.display = 'none';
@@ -203,6 +223,7 @@ export class Haste {
 						this.doc.key = returnedDocument.key;
 					}
 					window.history.pushState(null, `${this.appName}-${returnedDocument.key}`, file);
+					this.setPageMetadata(file);
 					this.setButtonsEnabled(false);
 					this.textArea.value = '';
 					this.textArea.style.display = 'none';
@@ -224,6 +245,26 @@ export class Haste {
 	private setTitle(ext?: string) {
 		const title = ext ? `${this.appName} - ${ext}` : this.appName;
 		document.title = title;
+	}
+
+	/**
+	 * Updates the metadata that search engines read per page.
+	 *
+	 * Every route is served the same index.html, so without this each document
+	 * would keep the homepage canonical it was shipped with and declare itself
+	 * a duplicate of the homepage.
+	 * @param path The path of the document being viewed
+	 */
+	private setPageMetadata(path: string) {
+		const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+		if (canonical) {
+			canonical.href = new URL(path, window.location.origin).href;
+		}
+
+		const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+		if (description) {
+			description.content = this.descriptionsMap.get(path) ?? this.defaultDescription;
+		}
 	}
 
 	/**

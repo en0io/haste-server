@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Hastebin</title>
 		<meta charset="utf-8" />
-		<link rel="preconnect" href="https://s.holocdn.net/"/>
-		<link rel="canonical" href="https://en0.sh" />
-		<meta name="url" content="https://en0.sh" />
-		<meta name="identifier-URL" content="http://en0.sh" />
-		<meta name="shortlink" content="https://en0.sh" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="archive,follow,imageindex,index,odp,snippet,translate" />
-		<meta name="googlebot" content="index,follow" />
-		<meta name="target" content="all" />
-		<meta name="audience" content="all" />
-		<meta name="coverage" content="Worldwide" />
-		<meta name="distribution" content="Global" />
+
+		<title>Hastebin</title>
+		<meta
+			name="description"
+				content="Hastebin is a fast, minimal pastebin for code and text. Paste a snippet, get syntax highlighting and a short link to share in seconds."
+		/>
+		<link rel="canonical" href="https://en0.sh/" />
+		<meta name="robots" content="index,follow" />
+
+		<!-- Preload holocdn, our domain we host static content like fonts from -->
+		<link rel="preconnect" href="https://s.holocdn.net/" />
+
+		<!-- Link previews (Open Graph / Twitter) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Hastebin" />
+		<meta property="og:title" content="Hastebin - fast, simple pastebin for code and text" />
+		<meta
+			property="og:description"
+			content="Hastebin is a fast, minimal pastebin for code and text. Paste a snippet, get syntax highlighting and a short link to share in seconds."
+		/>
+		<meta property="og:url" content="https://en0.sh/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:image" content="https://en0.sh/seo/android-chrome-512x512.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="512" />
+		<meta property="og:image:height" content="512" />
+		<meta property="og:image:alt" content="The Hastebin logo" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Hastebin - fast, simple pastebin for code and text" />
+		<meta
+			name="twitter:description"
+			content="Hastebin is a fast, minimal pastebin for code and text. Paste a snippet, get syntax highlighting and a short link to share in seconds."
+		/>
+		<meta name="twitter:image" content="https://en0.sh/seo/android-chrome-512x512.png" />
+		<meta name="twitter:image:alt" content="The Hastebin logo" />
+
+		<!-- Icons and installability -->
+		<link rel="manifest" href="/seo/site.webmanifest" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/seo/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/seo/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/seo/android-chrome-192x192.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/seo/apple-touch-icon.png" />
+		<link rel="apple-touch-startup-image" href="/seo/apple-startup.png" />
+		<link rel="mask-icon" href="/seo/safari-pinned-tab.svg" color="#1e88e5" />
+
+		<!-- Platform chrome -->
+		<meta name="application-name" content="Hastebin" />
+		<meta name="apple-mobile-web-app-title" content="Hastebin" />
+		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="HandheldFriendly" content="True" />
-		<meta name="apple-mobile-web-app-title" content="Hastebin" />
-		<meta name="application-name" content="Hastebin" />
-		<meta name="revisit-after" content="7 days" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta http-equiv="Expires" content="1y" />
-		<meta http-equiv="Pragma" content="1y" />
-		<meta http-equiv="Cache-Control" content="1y" />
-		<meta http-equiv="Page-Enter" content="RevealTrans(Duration=2.0,Transition=2)" />
-		<meta http-equiv="Page-Exit" content="RevealTrans(Duration=3.0,Transition=12)" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/seo/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="192x192" href="/seo/android-chrome-192x192.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/seo/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/seo/favicon-16x16.png" />
-		<link rel="apple-touch-startup-image" href="/seo/apple-startup.png" />
+		<meta name="msapplication-config" content="/seo/browserconfig.xml" />
+		<meta name="msapplication-TileColor" content="#282C34" />
 		<meta name="theme-color" content="#282C34" />
-		<link rel="mask-icon" href="/seo/safari-pinned-tab.svg" color="#1e88e5" />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "Hastebin",
+				"url": "https://en0.sh/",
+				"description": "Hastebin is a fast, minimal pastebin for code and text. Paste a snippet, get syntax highlighting and a short link to share in seconds.",
+				"applicationCategory": "DeveloperApplication",
+				"operatingSystem": "Any",
+				"browserRequirements": "Requires JavaScript.",
+				"inLanguage": "en"
+			}
+		</script>
 	</head>
 
 	<body>
