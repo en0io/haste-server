@@ -90,6 +90,12 @@ export interface DocumentHandlerConfig {
 	 * The length of the key used for documents.
 	 */
 	keyLength: number;
+
+	/**
+	 * Statically configured documents, mapping a document key to a file path on disk.
+	 * These take precedence over documents in the store.
+	 */
+	staticDocuments?: Record<string, string>;
 }
 
 /**

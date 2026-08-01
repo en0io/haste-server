@@ -27,20 +27,18 @@ const preferredStore = await (async () => {
 	}
 })();
 
-// Load all static documents
-for (const [name, path] of Object.entries(config.documents)) {
-	const data = await readFile(path, 'utf-8');
-
-	// Only if the file has actual content we want to add it to the store
-	if (data) {
-		await preferredStore.set(name, data, true);
-	}
+// Static documents are served from disk by the document handler, overriding the
+// store. Read them once at startup so a missing file fails the boot instead of
+// turning into 404s at request time.
+for (const path of Object.values(config.documents)) {
+	await readFile(path, 'utf-8');
 }
 
 // Setup the document handler with the preferred store
 const documentHandler = new DocumentHandler({
 	store: preferredStore,
-	keyLength: config.keyLength
+	keyLength: config.keyLength,
+	staticDocuments: config.documents
 });
 
 // Initialize fastify with a restricted body size
