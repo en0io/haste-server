@@ -15,22 +15,30 @@ To make a new entry, click "New" (or type 'control + n')
 
 # Content Removal
 
-If you would like one of your pastes removed or believe you have come across a paste violating our terms of service,
-please email contact@en0.io.
+If you believe you have come across a paste violating our terms of service, please contact security@en0.sh
 
 # Terms of Service
 
-en0.sh is not to be used for any illegal purposes, or for spam/harassment.
-If you believe you have come across a paste violating our terms of service, please email abuse@en0.io.
+en0.sh is not to be used for any purposes illegal in the United States, including but not limited to:
 
-Additionally, we reserve the right to remove any paste at any time and deny 
+ - malware distribution
+ - dissemination of personally identifiable information
+ - harassment
+
+We reserve the right to remove any paste at any time for any reason, and limit or deny access to Hastebin to anyone at
+any time
+for any reason.
 
 ## Author
 
-Hastebin was originally written by John Crepezzi <john.crepezzi@gmail.com>.
-Much of our fork is derived from the Skyra Project's rewrite (https://github.com/skyra-project/haste-server).
+The original Hastebin codebase was developed by John Crepezzi (john.crepezzi@gmail.com>).
+John Crepezzi's original code is no longer available on GitHub, however we host a copy of it as of September 2023 at https://git.en0.io/en0/haste-server-archive
 
-This instance is hosted by en0.io
-https://en0.io/
+The TypeScript port, which underpins most of this fork, was done by The Skyra Project (https://github.com/skyra-project/haste-server) and their contributors, including:
+ - Jeroen Claassens
+ - Aura Román
+ - Han Chen
+ - Sean Outram
 
-Key Design by Brian Dawson <bridawson@gmail.com>
+Current development of this fork is done by Alyx Wijers, as part of the en0 Project, which has been hosting Hastebin since 2019.
+https://en0.io
