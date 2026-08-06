@@ -1,5 +1,8 @@
-import { esbuildPluginVersionInjector } from 'esbuild-plugin-version-injector';
+import { createRequire } from 'node:module';
 import { defineConfig } from 'tsup';
+import Replace from 'unplugin-replace/esbuild';
+
+const { version } = createRequire(import.meta.url)('./package.json') as { version: string };
 
 export default defineConfig({
 	clean: true,
@@ -13,5 +16,10 @@ export default defineConfig({
 	tsconfig: 'src/backend/tsconfig.json',
 	outDir: 'dist/backend',
 	bundle: false,
-	esbuildPlugins: [esbuildPluginVersionInjector()]
+	esbuildPlugins: [
+		Replace({
+			preventAssignment: true,
+			values: [{ find: /\[VI\]{{inject}}\[\/VI\]/g, replacement: version }]
+		})
+	]
 });

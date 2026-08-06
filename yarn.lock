@@ -755,13 +755,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/gen-mapping@npm:^0.3.2":
+"@jridgewell/gen-mapping@npm:^0.3.2, @jridgewell/gen-mapping@npm:^0.3.5":
   version: 0.3.13
   resolution: "@jridgewell/gen-mapping@npm:0.3.13"
   dependencies:
     "@jridgewell/sourcemap-codec": "npm:^1.5.0"
     "@jridgewell/trace-mapping": "npm:^0.3.24"
   checksum: 10/902f8261dcf450b4af7b93f9656918e02eec80a2169e155000cb2059f90113dd98f3ccf6efc6072cee1dd84cac48cade51da236972d942babc40e4c23da4d62a
+  languageName: node
+  linkType: hard
+
+"@jridgewell/remapping@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "@jridgewell/remapping@npm:2.3.5"
+  dependencies:
+    "@jridgewell/gen-mapping": "npm:^0.3.5"
+    "@jridgewell/trace-mapping": "npm:^0.3.24"
+  checksum: 10/c2bb01856e65b506d439455f28aceacf130d6c023d1d4e3b48705e88def3571753e1a887daa04b078b562316c92d26ce36408a60534bceca3f830aec88a339ad
   languageName: node
   linkType: hard
 
@@ -1166,13 +1176,6 @@ __metadata:
   dependencies:
     prettier: "npm:^3.0.0"
   checksum: 10/900ec710173f05a31e3fe25151221d2c5f0d385d2f6e0b68d3a4713412e70871e6b64c3107d1f6952fff7e5032cb37186b9b522ab1eb048bbde6de09e8ecb027
-  languageName: node
-  linkType: hard
-
-"@sapphire/result@npm:^2.6.4":
-  version: 2.8.0
-  resolution: "@sapphire/result@npm:2.8.0"
-  checksum: 10/d724707001a79412c65bb23ac522911677ba97576aa1b24e93180b75e9ab9e3ef26f7bfa549057ac0e12a0f8a8fc1d9cc86b3542f48405f89ed34548e3fff8ee
   languageName: node
   linkType: hard
 
@@ -2087,7 +2090,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.66.0"
     autoprefixer: "npm:^10.5.4"
     concurrently: "npm:^10.0.4"
-    esbuild-plugin-version-injector: "npm:^1.2.1"
     eslint: "npm:^10.8.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.6"
@@ -2098,6 +2100,7 @@ __metadata:
     rimraf: "npm:^6.1.3"
     tsup: "npm:^8.5.1"
     typescript: "npm:^6.0.3"
+    unplugin-replace: "npm:^0.9.0"
     vite: "npm:^8.2.0"
   languageName: unknown
   linkType: soft
@@ -2106,15 +2109,6 @@ __metadata:
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
   checksum: 10/65b5df55a8bab92229ab2b40dad3b387fad24613263d103a97f91c9fe43ceb21965cd3392b1ccb5d77088021e525c4e0481adb309625d0cb94ade1d1fb8dc17e
-  languageName: node
-  linkType: hard
-
-"esbuild-plugin-version-injector@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "esbuild-plugin-version-injector@npm:1.2.1"
-  dependencies:
-    "@sapphire/result": "npm:^2.6.4"
-  checksum: 10/d45704bb67af33544bc14dc9b4bcc92e51571e5ac4a47df616e1249ae5f6ae1be0c01cff3aef767955db7a84d606639ff0244f49e55d3b91ed860651ef81ffdd
   languageName: node
   linkType: hard
 
@@ -2967,6 +2961,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-tokens@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "js-tokens@npm:10.0.0"
+  checksum: 10/88f536ec89f076fc230d29df255b3c55531237669d746d1868fca716b1e3f5f2e4abf8e5b8701903216e3f00d2dc3918d078b35da87772d433ab6a513c3bf76d
+  languageName: node
+  linkType: hard
+
 "js-yaml@npm:^4.1.0":
   version: 4.3.1
   resolution: "js-yaml@npm:4.3.1"
@@ -3226,6 +3227,15 @@ __metadata:
   dependencies:
     "@jridgewell/sourcemap-codec": "npm:^1.5.5"
   checksum: 10/57d5691f41ed40d962d8bd300148114f53db67fadbff336207db10a99f2bdf4a1be9cac3a68ee85dba575912ee1d4402e4396408196ec2d3afd043b076156221
+  languageName: node
+  linkType: hard
+
+"magic-string@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "magic-string@npm:1.1.0"
+  dependencies:
+    "@jridgewell/sourcemap-codec": "npm:^1.5.5"
+  checksum: 10/01e9b5c05c3bfe219cf6ffe0d0f9158b1c72becfe4bfa8e4896122bcbd44665b10cdfbd2d0b9cd850fa0876a756f80c9cd47b4086a946e3022d73ad467490c8c
   languageName: node
   linkType: hard
 
@@ -3802,6 +3812,20 @@ __metadata:
   bin:
     rimraf: dist/esm/bin.mjs
   checksum: 10/dd98ec2ad7cd2cccae1c7110754d472eac8edb2bab8a8b057dce04edfe1433dab246a889b3fd85a66c78ca81caa1429caa0e736c7647f6832b04fd5d4dfb8ab8
+  languageName: node
+  linkType: hard
+
+"rolldown-string@npm:^0.3.0":
+  version: 0.3.1
+  resolution: "rolldown-string@npm:0.3.1"
+  dependencies:
+    magic-string: "npm:^1.0.0"
+  peerDependencies:
+    rolldown: "*"
+  peerDependenciesMeta:
+    rolldown:
+      optional: true
+  checksum: 10/de5980da707b84272c0356ff633502bcbbb3dc947fb2d504c248ad2772d78f45bf6e5181bfeeeee15d8367e2683c5949f865911f8981103c1f8502f3b44157de
   languageName: node
   linkType: hard
 
@@ -4430,6 +4454,57 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unplugin-replace@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "unplugin-replace@npm:0.9.0"
+  dependencies:
+    js-tokens: "npm:^10.0.0"
+    rolldown-string: "npm:^0.3.0"
+    unplugin: "npm:^3.0.0"
+  checksum: 10/60fbdb03915e63ad407967bd9a5967fb6b4c24e3fa38cfd0b68fb85e4be2a8bae4516451437bb7aed25c5a0af81d22fcae1940b4439f5130db2cf0db44bd0c9f
+  languageName: node
+  linkType: hard
+
+"unplugin@npm:^3.0.0":
+  version: 3.3.0
+  resolution: "unplugin@npm:3.3.0"
+  dependencies:
+    "@jridgewell/remapping": "npm:^2.3.5"
+    picomatch: "npm:^4.0.4"
+    webpack-virtual-modules: "npm:^0.6.2"
+  peerDependencies:
+    "@farmfe/core": "*"
+    "@rspack/core": "*"
+    bun-types-no-globals: "*"
+    esbuild: "*"
+    rolldown: "*"
+    rollup: "*"
+    unloader: "*"
+    vite: "*"
+    webpack: "*"
+  peerDependenciesMeta:
+    "@farmfe/core":
+      optional: true
+    "@rspack/core":
+      optional: true
+    bun-types-no-globals:
+      optional: true
+    esbuild:
+      optional: true
+    rolldown:
+      optional: true
+    rollup:
+      optional: true
+    unloader:
+      optional: true
+    vite:
+      optional: true
+    webpack:
+      optional: true
+  checksum: 10/162aa991dcc464c124bee401c30e35fb579cccdba0a7a6c0b5f8c615532e08059a256d9d33450373f4b804508a4c01bfc8bd07a2e2143e31ff51b911dbf57952
+  languageName: node
+  linkType: hard
+
 "update-browserslist-db@npm:^1.2.3":
   version: 1.2.3
   resolution: "update-browserslist-db@npm:1.2.3"
@@ -4514,6 +4589,13 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10/c019ae45923186aeced9c7ccd661250473e43eb5a136e8031a7ee2b02b69d9dfe5bd6a267130e2888a1dc69a3e5481779e467f5c2e0f15671e9360b40a8056ff
+  languageName: node
+  linkType: hard
+
+"webpack-virtual-modules@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "webpack-virtual-modules@npm:0.6.2"
+  checksum: 10/d9a0d035f7ec0c7f1055aaf88bfe48b7f96458043916a1b2926d9012fd61de3810a6b768e31a8cd4b3c84a9b6d55824361a9dd20aaf9f5ccfb6f017af216a178
   languageName: node
   linkType: hard
 
