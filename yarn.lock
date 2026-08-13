@@ -18,9 +18,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:^3.1108.0":
-  version: 3.1108.0
-  resolution: "@aws-sdk/client-s3@npm:3.1108.0"
+"@aws-sdk/client-s3@npm:^3.1110.0":
+  version: 3.1110.0
+  resolution: "@aws-sdk/client-s3@npm:3.1110.0"
   dependencies:
     "@aws-sdk/checksums": "npm:^3.1000.27"
     "@aws-sdk/core": "npm:^3.977.7"
@@ -33,7 +33,7 @@ __metadata:
     "@smithy/node-http-handler": "npm:^4.9.13"
     "@smithy/types": "npm:^4.16.1"
     tslib: "npm:^2.6.2"
-  checksum: 10/0ae6eb252541552bd3ba75687d63213dcacfe9bdee8849b61dd1c266e12ec1a025692093dd8e26a239b268545ad62fcc96709fbc6e298e11958a67595cc9c3ed
+  checksum: 10/d05f802e7b8d21fa5bc304845fec0e139cb1ec74b673fa1fa8fd0633bb891182cc287d15d7640c76d4e13610217a41f3e278342fce2dab315c9d9a5e4e5c54b9
   languageName: node
   linkType: hard
 
@@ -2071,7 +2071,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "en0-Haste-Server@workspace:."
   dependencies:
-    "@aws-sdk/client-s3": "npm:^3.1108.0"
+    "@aws-sdk/client-s3": "npm:^3.1110.0"
     "@fastify/rate-limit": "npm:^11.2.0"
     "@fastify/sensible": "npm:^6.0.5"
     "@fastify/static": "npm:^10.1.3"
@@ -2093,7 +2093,7 @@ __metadata:
     eslint: "npm:^10.8.1"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.6"
-    fastify: "npm:^5.11.3"
+    fastify: "npm:^5.12.0"
     highlight.js: "npm:^11.12.0"
     ioredis: "npm:^6.0.0"
     prettier: "npm:^3.9.6"
@@ -2535,9 +2535,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:^5.11.3":
-  version: 5.11.3
-  resolution: "fastify@npm:5.11.3"
+"fastify@npm:^5.12.0":
+  version: 5.12.0
+  resolution: "fastify@npm:5.12.0"
   dependencies:
     "@fastify/ajv-compiler": "npm:^4.0.5"
     "@fastify/error": "npm:^4.0.0"
@@ -2549,12 +2549,12 @@ __metadata:
     find-my-way: "npm:^9.6.0"
     light-my-request: "npm:^6.0.0"
     pino: "npm:^9.14.0 || ^10.1.0"
-    process-warning: "npm:^5.0.0"
+    process-warning: "npm:^5.1.0"
     rfdc: "npm:^1.3.1"
     secure-json-parse: "npm:^4.0.0"
     semver: "npm:^7.6.0"
     toad-cache: "npm:^3.7.0"
-  checksum: 10/41807c39e198c4b424f05126e480dd3ccc8e04f27ff1da1b5c6caf991047292cf07507cfbbad21384887a03bd2698bf7546de95b98f1f168fc1d8f8ea7791997
+  checksum: 10/be7d21992273b6a3ba264b321390d384094eb191b80e67936a32c6ff62ff222812178f7fd4e6f396aae7fb32d34e001af291c1a8a1ec2fef9d78d91f46eac59a
   languageName: node
   linkType: hard
 
@@ -3687,7 +3687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process-warning@npm:^5.0.0":
+"process-warning@npm:^5.0.0, process-warning@npm:^5.1.0":
   version: 5.1.0
   resolution: "process-warning@npm:5.1.0"
   checksum: 10/ff3fccbc71b1a5af289fdc4d195b6c82c89f51f3fea5bb06bda6e533b9c98d381675571d3b0d66ff0fa85e59d9c69049726dd55a76996c2e6294759166072aa4
