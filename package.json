@@ -17,10 +17,10 @@
 		"format": "prettier --write src"
 	},
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.1140.0",
+		"@aws-sdk/client-s3": "^3.1141.0",
 		"@fastify/rate-limit": "^11.2.0",
-		"@fastify/sensible": "^6.0.5",
-		"@fastify/static": "^10.1.4",
+		"@fastify/sensible": "^6.0.6",
+		"@fastify/static": "^10.1.5",
 		"@fastify/swagger": "^9.9.0",
 		"@fastify/swagger-ui": "^6.1.1",
 		"@fastify/type-provider-typebox": "^6.1.0",
@@ -36,7 +36,7 @@
 		"@sapphire/eslint-config": "^5.0.6",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
-		"@types/node": "^26.6.2",
+		"@types/node": "^26.6.3",
 		"@typescript-eslint/eslint-plugin": "^8.70.1",
 		"@typescript-eslint/parser": "^8.70.1",
 		"autoprefixer": "^10.6.1",
@@ -54,5 +54,5 @@
 	"eslintConfig": {
 		"extends": "@sapphire"
 	},
-	"packageManager": "yarn@4.18.0"
+	"packageManager": "yarn@4.18.1"
 }
