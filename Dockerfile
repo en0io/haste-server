@@ -2,7 +2,7 @@
 #    Base Stage    #
 # ================ #
 
-FROM node:24-alpine AS base
+FROM node:26-alpine AS base
 
 WORKDIR /usr/src/app
 
@@ -16,6 +16,8 @@ COPY --chown=node:node .yarnrc.yml .
 COPY --chown=node:node README.md .
 COPY --chown=node:node ABOUT.md .
 
+# Install corepack
+RUN npm install -g corepack && corepack enable && corepack install
 # Yarn comes from the "packageManager" field in package.json, via Corepack
 RUN corepack enable && corepack install
 
