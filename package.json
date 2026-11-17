@@ -33,7 +33,7 @@
 		"ioredis": "^6.0.0"
 	},
 	"devDependencies": {
-		"@sapphire/eslint-config": "^5.0.6",
+		"@sapphire/eslint-config": "^6.0.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
 		"@types/node": "^26.6.6",
