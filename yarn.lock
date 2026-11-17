@@ -91,9 +91,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:^3.1169.0":
-  version: 3.1169.0
-  resolution: "@aws-sdk/client-s3@npm:3.1169.0"
+"@aws-sdk/client-s3@npm:^3.1170.0":
+  version: 3.1170.0
+  resolution: "@aws-sdk/client-s3@npm:3.1170.0"
   dependencies:
     "@aws-sdk/checksums": "npm:^3.1002.5"
     "@aws-sdk/core": "npm:^3.981.0"
@@ -106,7 +106,7 @@ __metadata:
     "@smithy/node-http-handler": "npm:^4.14.2"
     "@smithy/types": "npm:^4.20.0"
     tslib: "npm:^2.6.2"
-  checksum: 10/fec0798f07a70793dd444edeb3c36c155ff6db9a2315310fc396e80acb947232fefd808f050dcf7a61f43879e0c8be2b5cdb5c61ca9b4a64e190e990a567aba0
+  checksum: 10/60e901aa475274c6980362554a12b4852eb6eade6a4ce2d04623f2bc93cf91d6e8bca7cdd0721bbd557e38a8749eb7d0ff24393bf870d033840d4a49fe507db5
   languageName: node
   linkType: hard
 
@@ -991,16 +991,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/swagger@npm:^9.9.4":
-  version: 9.9.4
-  resolution: "@fastify/swagger@npm:9.9.4"
+"@fastify/swagger@npm:^9.9.5":
+  version: 9.9.5
+  resolution: "@fastify/swagger@npm:9.9.5"
   dependencies:
     fastify-plugin: "npm:^6.0.0"
     json-schema-resolver: "npm:^3.0.0"
     openapi-types: "npm:^12.1.3"
     rfdc: "npm:^1.3.1"
     yaml: "npm:^2.4.2"
-  checksum: 10/0bfa91abc4293294ceb710a518979c85f037672b4db4455f76290d56e9ff2d697d15580b32496cdca3017a307a762691bb1eaf28ba567f8ebc225018f49c2fa0
+  checksum: 10/060f517504fecd42194b34e0e24300f5aa0f505f8432c8276105010e7c38eaad2cc6f450ce2703f13381d3db581cbf8d3881b57cdf97239871ed7474c8317537
   languageName: node
   linkType: hard
 
@@ -1998,7 +1998,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:8.73.0, @typescript-eslint/eslint-plugin@npm:^8.62.0, @typescript-eslint/eslint-plugin@npm:^8.72.2":
+"@typescript-eslint/eslint-plugin@npm:8.73.0, @typescript-eslint/eslint-plugin@npm:^8.62.0, @typescript-eslint/eslint-plugin@npm:^8.72.2, @typescript-eslint/eslint-plugin@npm:^8.73.0":
   version: 8.73.0
   resolution: "@typescript-eslint/eslint-plugin@npm:8.73.0"
   dependencies:
@@ -2029,7 +2029,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:8.73.0, @typescript-eslint/parser@npm:^8.62.0, @typescript-eslint/parser@npm:^8.72.2":
+"@typescript-eslint/parser@npm:8.73.0, @typescript-eslint/parser@npm:^8.62.0, @typescript-eslint/parser@npm:^8.72.2, @typescript-eslint/parser@npm:^8.73.0":
   version: 8.73.0
   resolution: "@typescript-eslint/parser@npm:8.73.0"
   dependencies:
@@ -3456,11 +3456,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "en0-Haste-Server@workspace:."
   dependencies:
-    "@aws-sdk/client-s3": "npm:^3.1169.0"
+    "@aws-sdk/client-s3": "npm:^3.1170.0"
     "@fastify/rate-limit": "npm:^11.2.2"
     "@fastify/sensible": "npm:^6.0.8"
     "@fastify/static": "npm:^10.1.11"
-    "@fastify/swagger": "npm:^9.9.4"
+    "@fastify/swagger": "npm:^9.9.5"
     "@fastify/swagger-ui": "npm:^6.1.4"
     "@fastify/type-provider-typebox": "npm:^6.3.0"
     "@pnotify/core": "npm:^5.2.0"
@@ -3471,8 +3471,8 @@ __metadata:
     "@sinclair/typebox": "npm:^0.34.52"
     "@skyra/env-utilities": "npm:^2.0.1"
     "@types/node": "npm:^26.6.6"
-    "@typescript-eslint/eslint-plugin": "npm:^8.72.2"
-    "@typescript-eslint/parser": "npm:^8.72.2"
+    "@typescript-eslint/eslint-plugin": "npm:^8.73.0"
+    "@typescript-eslint/parser": "npm:^8.73.0"
     autoprefixer: "npm:^10.6.2"
     concurrently: "npm:^10.0.7"
     eslint: "npm:^10.15.0"
