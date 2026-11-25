@@ -17,7 +17,7 @@
 		"format": "prettier --write src"
 	},
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.1175.0",
+		"@aws-sdk/client-s3": "^3.1177.0",
 		"@fastify/rate-limit": "^11.3.0",
 		"@fastify/sensible": "^6.0.8",
 		"@fastify/static": "^10.1.12",
@@ -30,15 +30,15 @@
 		"@skyra/env-utilities": "^2.0.1",
 		"fastify": "^5.12.8",
 		"highlight.js": "^11.12.0",
-		"ioredis": "^6.0.0"
+		"ioredis": "^6.1.0"
 	},
 	"devDependencies": {
 		"@sapphire/eslint-config": "^6.0.0",
 		"@sapphire/prettier-config": "^3.0.0",
 		"@sapphire/ts-config": "^6.0.0",
-		"@types/node": "^26.6.6",
-		"@typescript-eslint/eslint-plugin": "^8.73.0",
-		"@typescript-eslint/parser": "^8.73.0",
+		"@types/node": "^26.6.10",
+		"@typescript-eslint/eslint-plugin": "^8.74.0",
+		"@typescript-eslint/parser": "^8.74.0",
 		"autoprefixer": "^10.7.0",
 		"concurrently": "^10.0.7",
 		"eslint": "^10.15.0",
